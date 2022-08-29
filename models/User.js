@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const bcrypt = require("bcrypt");
 
 // create User model
-class User extends Model { }
+class User extends Model {}
 
 // defined table columns and configuration
 User.init(
@@ -40,11 +41,24 @@ User.init(
 			allowNull: false,
 			validate: {
 				// this means the password must be at least four characters long
-                len: [4]
+				len: [4],
 			},
 		},
 	},
 	{
+		hooks: {
+			// set up beforeCreate lifecycle "hook" functionality
+			async beforeCreate(newUserData) {
+				newUserData.password = await bcrypt.hash(newUserData.password, 10);
+				return newUserData;
+            },
+            
+            // set up beforeUpdate hashing
+            async beforeUpdate(updatedUserData) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            }
+		},
 		// TABLE CONFIGURATION OPTIONS GO HERE (https://sequelize.org/v5/manual/models-definition.html#configuration))
 		// pass in our imported sequelize connection (the direct connection to our database)
 		sequelize,
@@ -59,5 +73,4 @@ User.init(
 	}
 );
 
-
-module.exports = User
+module.exports = User;
