@@ -9,7 +9,7 @@ const helpers = require("./utils/helpers");
 const hbs = exphbs.create({ helpers });
 
 const app = express();
-const PORT = 3001 || process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
 const sess = {
 	secret: "Super secret secret",
