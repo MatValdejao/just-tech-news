@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Just-Tech-News is a social platform for the tech savvy. The application allows its users to read tech news and interact with other tech enthusiasts. Users can comment, reply, and upvote other posts a supplies people with an envrionment where they are able to share their passion with others. 
+Just-Tech-News is a social platform for the tech savvy. The application allows its users to post tech news and interact with other tech enthusiasts on their posts. Users can comment, reply, and upvote other posts. The application supplies people with an environment where they are able to share their passion with others. 
 
 ## Built with
 
