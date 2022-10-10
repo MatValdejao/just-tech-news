@@ -32,6 +32,10 @@ Just-Tech-News is a social platform for the tech savvy. The application allows i
 - From the ../just-tech-news directory - `npm start`
 - Use an api tool such as Insomnia or Postman to test the APIs or go directly to the [local site](http://localhost:3001)
 
+### Live Look
+
+![Live Website](./just-tech.png)
+
 ## Links
 
 [Live Site](https://arcane-journey-82765.herokuapp.com/)<br>
